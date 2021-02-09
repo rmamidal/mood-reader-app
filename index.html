@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Mood Reader App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="mphtools-feature" content="compatibilityUI, cameraPrivacyPopup, compatibilityAutoCheck">
+        <link rel="stylesheet" href="">
+    </head>
+    <script src="https://sdk.morphcast.com/mphtools/v1.0/mphtools.js"></script>
+    <script src="https://ai-sdk.morphcast.com/v1.14/ai-sdk.js"></script>
+    <script>
+    CY.loader()
+    .addModule(CY.modules().FACE_DETECTOR.name)
+    .load()
+    .then(({ start, stop }) => start());
+
+    window.addEventListener(CY.modules().FACE_DETECTOR.eventName, (evt) => {
+    console.log('Face detector result', evt.detail);
+    });
+    </script>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+    </body>
+</html>
