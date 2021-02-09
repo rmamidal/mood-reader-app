@@ -81,8 +81,18 @@
   window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
     // It's better to use raw output for one-shot photo analysis.
     // This output is not documented because it should not be used in the normal scenario
+    let emotionData = `Dominant Emotion: ${evt.detail.output.dominantEmotion} <br/>
+    Emotion Angry:  ${evt.detail.output.emotion.Angry} <br/>
+    Emotion Disgust:  ${evt.detail.output.emotion.Disgust} <br/>
+    Emotion Fear:  ${evt.detail.output.emotion.Fear} <br/>
+    Emotion Happy:  ${evt.detail.output.emotion.Happy} <br/>
+    Emotion Neutral:  ${evt.detail.output.emotion.Neutral} <br/>
+    Emotion Sad:  ${evt.detail.output.emotion.Sad} <br/>
+    Emotion Surprice:  ${evt.detail.output.emotion.Surprice} `;
+    document.getElementById('emotionData').innerHTML = emotionData;
     console.log(CY.modules().FACE_EMOTION.eventName, evt.detail);
   });
 </script>
+<div id="emotionData"></div>
 </body>
 </html>
