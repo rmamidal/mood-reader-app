@@ -55,9 +55,9 @@
       return camera.stopped;
     }
   };
-
+  const config = {smoothness: 0.40, enableBalancer : false};
   CY.loader()
-    .addModule(CY.modules().FACE_DETECTOR.name)
+    .addModule(CY.modules().FACE_EMOTION.name, config)
     .source(customSource)
     .load().then(({ start }) => {
     start();
