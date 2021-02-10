@@ -65,6 +65,7 @@
   };
   const config = {smoothness: 0.40, enableBalancer : false};
   CY.loader()
+    .licenseKey("65c23999b12f65348c12e7baf70d7cd9b972be35fb50")
     .addModule(CY.modules().FACE_EMOTION.name, config)
     .source(customSource)
     .load().then(({ start }) => {
